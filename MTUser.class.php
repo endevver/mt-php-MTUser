@@ -6,7 +6,7 @@ class MTUser {
       $props = explode(";",$_COOKIE[$cookie]);
       //echo "<p>cookie: ".$_COOKIE[$cookie]."</p>";
       foreach ($props as $prop) {
-	preg_match("/^([^:]*):\\\'(.*)\\\'$/", $prop, $regs);
+	preg_match("/^([^:]*):\'(.*)\'$/", $prop, $regs);
 	list($orig,$key,$val) = $regs;
 	if (preg_match("/(is_|can_)/", $key)) {
 	  $val = ($val == "1" ? 1 : 0);
